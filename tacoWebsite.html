@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            font-family: helvetic;
+            background: #BCD54A;
+            background-image:
+                url("https://images.purplecarrot.com/uploads/product/image/704/_1400_700_40eb_Vegan_TempehTacos_Hero-6-64efbeb23adb242e60033a9957cbc0f2.jpg");
+            background-repeat: no-repeat;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            color: #FFFFFF;
+            font-family: 'Limelight', cursive;
+        }
+
+        h3 {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        button {
+            text-decoration: underline;
+            font-size: 14px;
+            border-radius: 20px;
+            padding: 0 15px;
+            width: 230px;
+            height: 60px;
+            color: #476723;
+            font-family: Georgia, "Times New Roman", Times, serif;
+            font-weight: bolder;
+            opacity: 0.7;
+            transition: 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+            border: .5 px solid gray;
+            border-radius: 20px;
+            box-shadow: 1px 5px lightgray;
+            background-color: #ffffff;
+
+        }
+
+        #myDIV {
+            display: none;
+        }
+
+        p {
+            display: none;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+            border: .5 px solid gray;
+            border-radius: 20px;
+            box-shadow: 1px 5px lightgray;
+            background-color: #ffffff;
+            color: #476723;
+            height: 100px;
+            width: 450px;
+            opacity: 0.8;
+        }
+
+        #howTacos {
+            display: inline-block;
+            text-decoration: underline;
+            cursor: pointer;
+            border: .5 px solid gray;
+            border-radius: 20px;
+            box-shadow: 1px 5px lightgray;
+            background-color: #ffffff;
+            color: #476723;
+            height: 30px;
+            width: 450px;
+            opacity: 0.8;
+        }
+
+        #myMomsMole {
+            display: inline-block;
+            text-decoration: underline;
+            cursor: pointer;
+            border: .5 px solid gray;
+            border-radius: 20px;
+            box-shadow: 1px 5px lightgray;
+            background-color: #ffffff;
+            color: #476723;
+            height: 65px;
+            width: 250px;
+            opacity: 0.8;
+        }
+
+        #container {
+            display: flex;
+            justify-content: flex-end;
+            flex-flow: column;
+            align-items: center;
+            position: relative;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            max-height: 100%;
+            max-width: 100%;
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+    <h1>Tacos al Pastor<h1>
+            <h3>Tacos are delicious, coding is delicious. <br> Why not combine the two?</h3>
+            <button id: "myButton" onclick="myFunction()">What's in my order of tacos tho?</button>
+            <br>
+            <div id="myDIV">
+                <p id="myLog"></p>
+
+                <script id="tacoFunction">
+                    let listOfIngredients = [
+                        ['al pastor', 'Mexico'],
+                        ['salsa', 'Mexico'],
+                        ['tortilla', 'Mexico'],
+                        ['cebolla', 'Mexico'],
+                        ['limon', 'Mexico']
+                    ];
+
+                    let ingredient = {
+                        name: '',
+                        originCountry: '',
+                        inStock: true
+                    }
+
+                    for (let i = 0; i < listOfIngredients.length; i++) {
+                        let ingredientName = listOfIngredients[i][0];
+                        let countryOrigin = listOfIngredients[i][1];
+                        let message = `Your order has the ingredient ${ingredientName} and it's from ${countryOrigin}!`;
+
+                        window.console = {
+                            log: function (str) {
+                                var node = document.createElement("div");
+                                node.appendChild(document.createTextNode(str));
+                                document.getElementById("myLog").appendChild(node);
+                            }
+                        }
+                        console.log(message);
+                    }
+
+
+                    function myFunction() {
+                        var x = document.getElementById("myDIV");
+                        if (x.style.display === "none") {
+                            x.style.display = "block";
+                        } else {
+                            x.style.display = "none";
+                        }
+                    }
+                </script>
+                </h3>
+            </div>
+
+            <h2><a id=howTacos href="https://en.wikipedia.org/wiki/Taco">But... How do Tacos even exist tho?</a></h2>
+            <h4><a id=myMomsMole href="https://www.mymomsmole.com/">Don't like tacos?<br>(Um... What?)<br>Try some
+                    delicious
+                    mole!</a></h4>
+
+            <div id="container">
+                <h4><strong>Coded by<br></strong>
+                    Sarah Graywood
+                </h4>
+            </div>
+</body>
